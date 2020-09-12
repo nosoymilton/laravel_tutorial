@@ -1,0 +1,40 @@
+[33m8bcf53b[m[33m ([m[1;36mHEAD -> [m[1;32m7.0[m[33m)[m respaldo general 19092020
+[33mc33004e[m[33m ([m[1;31morigin/HEAD[m[33m, [m[1;31morigin/7.0[m[33m)[m fix: update page title name with app name from config
+[33mb0ba1d9[m fix(composer): remove composer.lock file
+[33m0160070[m feat: laravel 7.0 integrated with admin-lte
+[33m6a61a7e[m feat: composer update (#60)
+[33m472d034[m 6.0 Updated config file with localized option (#62)
+[33m5b4f7a0[m refactor: copyright year changed (#61)
+[33m1712777[m feat(auth): implement user email verification (#59)
+[33ma475447[m fix: re-publish AppBaseController
+[33m2013c71[m build(deps): bump symfony/http-foundation from 4.3.4 to 4.4.1 (#58)
+[33m6d30fe9[m build(deps): bump symfony/mime from 4.3.4 to 4.4.1 (#57)
+[33m06d0008[m feat(swagger): swagger support added (#55)
+[33mcc8fac1[m fix: sample file added into git
+[33m21997d5[m fix: service provider updated
+[33m50a9080[m feat: v6.0 created  for adminlte
+[33m0958191[m Merge pull request #49 from InfyOmLabs/vishal/5_8_config_updated
+[33m080af20[m docs: config file is updated with latest options and addons
+[33m322d6d9[m docs(controllers): api base path for swagger changed
+[33m71c126d[m fix(toggle): added toggle java script and css (#43)
+[33m7879b2d[m fix(tests): updated to latest versions
+[33m5d39656[m fix(pkg): Package updated - 5.8 (#38)
+[33mb989204[m fix(composer): Removed composer.lock from 5.8 (#31)
+[33m1195a51[m fix(pkg): latest package updated (#30)
+[33mba51ebe[m fix: updated to latest code
+[33mefd060b[m feat: laravel 5.8 boilerplate added
+[33m0d42e9d[m feat: 5.7 boilerplate added
+[33m3ebb4b3[m feat: 5.6 boilerplate added
+[33m153111f[m feat: laravel 5.5 added
+[33m6c4d566[m first commit for 5.4
+[33m8fdefdf[m[33m ([m[1;31morigin/5.3[m[33m)[m Merge pull request #10 from bestmomo/5.3
+[33m462c09a[m Update web.php
+[33m537b4cd[m updated to latest laravel-generator version
+[33m3783ed1[m first laravel 5.3 commit
+[33m148ac48[m updated to latest version
+[33m96db0e3[m composer update
+[33mb4e2ea6[m Merge pull request #3 from w0rd-driven/cachefix
+[33mecdf766[m Adding bootstrap/cache/ folder and contents fixes InfyOmLabs/adminlte-generator#2
+[33m4b64279[m composer update with latest templates
+[33m0401c3e[m first commit
+[33m4851883[m Initial commit
