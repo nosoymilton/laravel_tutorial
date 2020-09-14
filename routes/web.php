@@ -33,3 +33,8 @@ Route::group(['middleware' => ['permission:view_roles|edit_roles|delete_roles|cr
     Route::resource('roles', 'RoleController');
 });
 
+
+
+Route::resource('libros', 'librosController');
+
+Route::resource('ejemplares', 'ejemplaresController');

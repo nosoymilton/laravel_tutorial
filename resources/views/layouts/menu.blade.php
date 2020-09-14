@@ -14,3 +14,11 @@
 </li>
 @endcan
 
+<li class="{{ Request::is('libros*') ? 'active' : '' }}">
+    <a href="{{ route('libros.index') }}"><i class="fa fa-edit"></i><span>Libros</span></a>
+</li>
+
+<li class="{{ Request::is('ejemplares*') ? 'active' : '' }}">
+    <a href="{{ route('ejemplares.index') }}"><i class="fa fa-edit"></i><span>Ejemplares</span></a>
+</li>
+
