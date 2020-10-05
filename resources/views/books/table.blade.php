@@ -12,8 +12,8 @@
         @foreach($books as $books)
             <tr>
                 <td>{{ $books->name }}</td>
-            <td>{{ $books->email_autor }}</td>
-            <td>{{ $books->publication_year }}</td>
+                <td>{{ $books->email_autor }}</td>
+                <td>{{ $books->publication_year }}</td>
                 <td>
                     {!! Form::open(['route' => ['books.destroy', $books->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
