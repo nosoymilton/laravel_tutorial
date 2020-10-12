@@ -8,5 +8,3 @@ abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
 }
-//nosoymilton
-//other line

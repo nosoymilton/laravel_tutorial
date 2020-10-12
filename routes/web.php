@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use app\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes(['verify' => true]);
@@ -33,8 +34,18 @@ Route::group(['middleware' => ['permission:view_roles|edit_roles|delete_roles|cr
     Route::resource('roles', 'RoleController');
 });
 
+Route::resource('libros', 'LibrosController');
 
+Route::resource('editoriales', 'EditorialesController');
 
-Route::resource('libros', 'librosController');
+Route::resource('idiomas', 'IdiomasController');
 
-Route::resource('ejemplares', 'ejemplaresController');
+Route::resource('autores', 'AutoresController');
+
+Route::resource('ejemplares', 'EjemplaresController');
+
+Route::resource('categorias', 'CategoriasController');
+
+Route::resource('categoriasHasLibros', 'Categorias_has_librosController');
+
+Route::resource('autoresHasLibros', 'Autores_has_librosController');
