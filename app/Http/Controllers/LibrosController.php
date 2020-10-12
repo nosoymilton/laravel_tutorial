@@ -55,11 +55,9 @@ class LibrosController extends AppBaseController
     public function store(CreateLibrosRequest $request)
     {
         $input = $request->all();
-
         $libros = $this->librosRepository->create($input);
 
         Flash::success('Libros saved successfully.');
-
         return redirect(route('libros.index'));
     }
 

@@ -38,6 +38,7 @@ class Libros extends Model
      */
     public $timestamps = false;
 
+   
     public $table = 'libros';
     
     const CREATED_AT = 'created_at';
@@ -89,7 +90,7 @@ class Libros extends Model
      **/
     public function editorialeseditoriales()
     {
-        return $this->belongsTo(\App\Models\Editoriale::class, 'editoriales_ideditoriales');
+        return $this->belongsTo(\App\Models\Editoriales::class, 'editoriales_ideditoriales');
     }
 
     /**
@@ -105,7 +106,7 @@ class Libros extends Model
      **/
     public function autores()
     {
-        return $this->belongsToMany(\App\Models\Autore::class, 'autores_has_libros');
+        return $this->belongsToMany(\App\Models\Autores::class, 'autores_has_libros');
     }
 
     /**
@@ -113,7 +114,7 @@ class Libros extends Model
      **/
     public function categorias()
     {
-        return $this->belongsToMany(\App\Models\Categoria::class, 'categorias_has_libros');
+        return $this->belongsToMany(\App\Models\Categorias::class, 'categorias_has_libros');
     }
 
     /**
@@ -121,6 +122,6 @@ class Libros extends Model
      **/
     public function ejemplares()
     {
-        return $this->hasMany(\App\Models\Ejemplare::class, 'libros_idlibros');
+        return $this->hasMany(\App\Models\Ejemplares::class, 'libros_idlibros');
     }
 }

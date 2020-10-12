@@ -66,8 +66,9 @@ class Editoriales extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      **/
-    public function idiomas()
+    
+    public function libros()
     {
-        return $this->belongsToMany(\App\Models\Idioma::class, 'libros');
+        return $this->hasMany(\App\Models\Libros::class, 'idlibros');
     }
 }

@@ -26,14 +26,14 @@
     <script type="text/javascript">
         $('#apublicacion').datetimepicker({
             format: 'YYYY',
-            useCurrent: true,
+            useCurrent: false,
             sideBySide: true
         })
     </script>
 @endpush
 
 <!-- Idiomas Ididiomas Field -->
-<div class="form-group col-sm-6">
+{{--<div class="form-group col-sm-6">
     {!! Form::label('idiomas_ididiomas', 'Idioma:') !!}
     {!! Form::number('idiomas_ididiomas', null, ['class' => 'form-control']) !!}
 </div>
@@ -42,7 +42,27 @@
 <div class="form-group col-sm-6">
     {!! Form::label('editoriales_ideditoriales', 'Editorial:') !!}
     {!! Form::number('editoriales_ideditoriales', null, ['class' => 'form-control']) !!}
+</div>--}}
+<!-- Editoriales Ideditoriales Field -->
+
+<div class="form-group col-sm-6">
+    <label for="idiomas_ididiomas">Idioma:</label>
+    <select name="idiomas_ididiomas" id="idiomas_ididiomas" class="form-control">
+        @foreach (App\Models\Idiomas::all() as $idiomas)
+            <option value="{{ $idiomas->ididiomas }}">{{ $idiomas->idioma }}</option>
+        @endforeach
+    </select>
 </div>
+
+<div class="form-group col-sm-6">
+    <label for="editoriales_ideditoriales">Editorial:</label>
+    <select name="editoriales_ideditoriales" id="editoriales_ideditoriales" class="form-control">
+        @foreach (App\Models\Editoriales::all() as $editoriales)
+            <option value="{{ $editoriales->ideditoriales }}">{{ $editoriales->editorial }}</option>
+        @endforeach
+    </select>
+</div>
+
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
