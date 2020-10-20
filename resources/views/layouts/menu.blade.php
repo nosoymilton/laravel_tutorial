@@ -1,9 +1,9 @@
-@canany(['view_roles','create_roles','edit_roles','delete_roles'])
+@canany(['ver_roles','crear_roles','editar_roles','eliminar_roles'])
 <li class="{{ Request::is('roles*') ? 'active' : '' }}">
     <a href="{{ route('roles.index') }}"><i class="fa fa-edit"></i><span>Roles</span></a>
 </li>
 @endcan
-@canany(['view_users','create_users','edit_users','delete_users'])
+@canany(['ver_usuarios','crear_usuarios','editar_usuarios','eliminar_usuarios'])
 <li class="{{ Request::is('users*') ? 'active' : '' }}">
     <a href="{{ route('users.index') }}"><i class="fa fa-edit"></i><span>Usuarios</span></a>
 </li>
@@ -11,9 +11,9 @@
 <li class="{{ Request::is('libros*') ? 'active' : '' }}">
     <a href="{{ route('libros.index') }}"><i class="fa fa-edit"></i><span>Libros</span></a>
 </li>
-<li class="{{ Request::is('ejemplares*') ? 'active' : '' }}">
+{{--<li class="{{ Request::is('ejemplares*') ? 'active' : '' }}">
     <a href="{{ route('ejemplares.index') }}"><i class="fa fa-edit"></i><span>Ejemplares</span></a>
-</li>
+</li>--}}
 <li class="{{ Request::is('autores*') ? 'active' : '' }}">
     <a href="{{ route('autores.index') }}"><i class="fa fa-edit"></i><span>Autores</span></a>
 </li>

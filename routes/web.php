@@ -22,15 +22,15 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->middleware('verified');
 
-Route::group(['middleware' => ['permission:view_books|edit_books|delete_books|create_books']], function () {
+Route::group(['middleware' => ['permission:ver_libros|editar_libros|eliminar_libros|crear_libros|catalogo_libros']], function () {
     Route::resource('books', 'booksController');
 });
 
-Route::group(['middleware' => ['permission:view_users|edit_users|delete_users|create_users']], function () {
+Route::group(['middleware' => ['permission:ver_usuarios|editar_usuarios|eliminar_usuarios|crear_usuarios']], function () {
     Route::resource('users', 'UserController');
 });
 
-Route::group(['middleware' => ['permission:view_roles|edit_roles|delete_roles|create_roles']], function () {
+Route::group(['middleware' => ['permission:ver_roles|editar_roles|eliminar_roles|crear_roles']], function () {
     Route::resource('roles', 'RoleController');
 });
 

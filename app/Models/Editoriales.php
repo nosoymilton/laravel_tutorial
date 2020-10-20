@@ -69,6 +69,6 @@ class Editoriales extends Model
     
     public function libros()
     {
-        return $this->hasMany(\App\Models\Libros::class, 'idlibros');
+        return $this->hasMany(\App\Models\libros::class, 'idlibros');
     }
 }

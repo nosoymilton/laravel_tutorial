@@ -52,6 +52,6 @@ class books extends Model
         'name' => 'required',
         'email_autor' => 'email'
     ];
-
+    
     
 }

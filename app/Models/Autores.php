@@ -73,6 +73,6 @@ class Autores extends Model
      **/
     public function libros()
     {
-        return $this->belongsToMany(\App\Models\Libro::class, 'autores_has_libros');
+        return $this->belongsToMany(\App\Models\Libros::class, 'autores_has_libros');
     }
 }

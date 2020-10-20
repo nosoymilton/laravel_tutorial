@@ -9,7 +9,7 @@
         <tbody>
         @foreach($idiomas as $idiomas)
             <tr>
-                <td>{{ $idiomas->idioma }}</td>
+                <td>{{ $idiomas->nombre }}</td>
                 <td>
                     {!! Form::open(['route' => ['idiomas.destroy', $idiomas->ididiomas], 'method' => 'delete']) !!}
                     <div class='btn-group'>

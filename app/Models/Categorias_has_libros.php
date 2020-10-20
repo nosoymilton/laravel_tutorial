@@ -52,7 +52,7 @@ class Categorias_has_libros extends Model
      **/
     public function categoriascategorias()
     {
-        return $this->belongsTo(\App\Models\Categoria::class, 'categorias_idcategorias');
+        return $this->belongsTo(\App\Models\Categorias::class, 'categorias_idcategorias');
     }
 
     /**
@@ -60,6 +60,6 @@ class Categorias_has_libros extends Model
      **/
     public function libroslibros()
     {
-        return $this->belongsTo(\App\Models\Libro::class, 'libros_idlibros');
+        return $this->belongsTo(\App\Models\libros::class, 'libros_idlibros');
     }
 }

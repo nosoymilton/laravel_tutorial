@@ -4,7 +4,7 @@
     <section class="content-header">
         <h1 class="pull-left">Roles</h1>
         <h1 class="pull-right">
-            @can('create_roles')
+            @can('crear_roles')
                 <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{{ route('roles.create') }}">Crear Rol</a>
             @endcan
         </h1>

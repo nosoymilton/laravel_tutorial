@@ -9,6 +9,6 @@ $factory->define(Categorias::class, function (Faker $faker) {
 
     return [
         'categoria' => $faker->word,
-        'descripcion' => $faker->word
+        'descripcion' => $faker->sentence($nbWords = 3, $variableNbWords = true)
     ];
 });

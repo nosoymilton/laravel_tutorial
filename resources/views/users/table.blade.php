@@ -12,18 +12,18 @@
         @foreach($users as $user)
             <tr>
                 <td>{{ $user->name }}</td>
-            <td>{{ $user->email }}</td>
-            <td>{{implode(" ", $user->getRoleNames()->toArray()) }}</td>
+                <td>{{ $user->email }}</td>
+                <td>{{implode(" ", $user->getRoleNames()->toArray()) }}</td>
                 <td>
                     {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        @can('view_users')
+                        @can('ver_usuarios')
                             <a href="{{ route('users.show', [$user->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>    
                         @endcan
-                        @can('edit_users')
+                        @can('editar_usuarios')
                             <a href="{{ route('users.edit', [$user->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>    
                         @endcan
-                        @can('delete_users')
+                        @can('eliminar_usuarios')
                         {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('¿Está segur@?')"]) !!}    
                         @endcan                     
                     </div>

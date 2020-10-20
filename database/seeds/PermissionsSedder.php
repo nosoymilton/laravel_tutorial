@@ -16,34 +16,48 @@ class PermissionsSedder extends Seeder
     public function run()
     {
         $permissions_array = [];
-        array_push($permissions_array, Permission::create(['name' => 'create_books']));
-        array_push($permissions_array, Permission::create(['name' => 'edit_books']));
-        array_push($permissions_array, Permission::create(['name' => 'delete_books']));
-        $viewBooksPermission = Permission::create(['name' => 'view_books']);
-        array_push($permissions_array, $viewBooksPermission);
-        $superAdminRole = Role::create(['name' => 'super_admin']);
-        $superAdminRole->syncPermissions($permissions_array);
-        $viewBooksRole = Role::create(['name' => 'view_books']);
-        $viewBooksRole->givePermissionTo($viewBooksPermission);
+        array_push($permissions_array, Permission::create(['name' => 'crear_libros']));
+        array_push($permissions_array, Permission::create(['name' => 'editar_libros']));
+        array_push($permissions_array, Permission::create(['name' => 'eliminar_libros']));
+        array_push($permissions_array, Permission::create(['name' => 'ver_libros']));
+        array_push($permissions_array, Permission::create(['name' => 'crear_roles']));
+        array_push($permissions_array, Permission::create(['name' => 'editar_roles']));
+        array_push($permissions_array, Permission::create(['name' => 'eliminar_roles']));
+        array_push($permissions_array, Permission::create(['name' => 'ver_roles']));
+        array_push($permissions_array, Permission::create(['name' => 'crear_usuarios']));
+        array_push($permissions_array, Permission::create(['name' => 'editar_usuarios']));
+        array_push($permissions_array, Permission::create(['name' => 'eliminar_usuarios']));
+        array_push($permissions_array, Permission::create(['name' => 'ver_usuarios']));
+        array_push($permissions_array, Permission::create(['name' => 'catalogo_libros']));
 
+        $AdminRole = Role::create(['name' => 'administrador']);
+        $AdminRole->syncPermissions($permissions_array);
+
+        $VolunRole = Role::create(['name' => 'voluntario']);
+
+        $SocioRole = Role::create(['name' => 'socio']);
+        
         //crear usuario
-        $userSuperAdmin = User::create([
+        $userAdmin = User::create([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('admin'),
         ]);
         //asignar rol
-        $userSuperAdmin->assignRole('super_admin');
-        $userViewBooks = User::create([
-            'name' => 'test',
-            'email' => 'test@gmail.com',
-            'password' => Hash::make('test'),
+        $userAdmin->assignRole('administrador');
+
+        $userVolun = User::create([
+            'name' => 'volun',
+            'email' => 'volun@gmail.com',
+            'password' => Hash::make('volun'),
         ]);
-        $userViewBooks->assignRole('view_books');
-        User::create([
-            'name' => 'test2',
-            'email' => 'test2@gmail.com',
-            'password' => Hash::make('test2'),
+        $userVolun->assignRole('voluntario');
+
+        $userSocio = User::create([
+            'name' => 'socio',
+            'email' => 'socio@gmail.com',
+            'password' => Hash::make('socio'),
         ]);
+        $userSocio->assignRole('socio');
     }
 }

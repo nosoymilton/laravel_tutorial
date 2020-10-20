@@ -20,12 +20,19 @@
                 <td>{{ $libros->isbn }}</td>
                 <td>{{ $libros->titulo }}</td>
                 <td>{{ $libros->numpaginas }}</td>
-                <td>{{ Carbon\Carbon::parse($libros->apublicacion)->format('Y') }}</td>
+                <td>{{ $libros->apublicacion}}</td>
                 <td>{{ App\Models\Idiomas::find($libros->idiomas_ididiomas) }}</td>
                 <td>{{ App\Models\Editoriales::find($libros->editoriales_ideditoriales) }}</td>
                 <td>{{ App\Models\Autores::find($libros->autores) }}</td>
-                <td>{{ App\Models\Ejemplares::find($libros->ejemplares) }}</td>
-                <td>{{ App\Models\Categorias::find($libros->categorias) }}</td>
+                <!--<td>{{ App\Models\Ejemplares::find($libros->ejemplares) }}</td>-->
+                <td>
+                    @foreach($libros->ejemplares as $ejemplar)
+                        {{ $ejemplar->descripcion }}
+                    @endforeach
+                </td>
+                <td>
+                    {{ App\Models\Categorias::find($libros->categorias) }}
+                </td>
                 <td>
                     {!! Form::open(['route' => ['libros.destroy', $libros->idlibros], 'method' => 'delete']) !!}
                     <div class='btn-group'>

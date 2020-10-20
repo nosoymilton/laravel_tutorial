@@ -69,6 +69,6 @@ class Categorias extends Model
      **/
     public function libros()
     {
-        return $this->belongsToMany(\App\Models\Libro::class, 'categorias_has_libros');
+        return $this->belongsToMany(\App\Models\libros::class, 'Categorias_has_libros');
     }
 }

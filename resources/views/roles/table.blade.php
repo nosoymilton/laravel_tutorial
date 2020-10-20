@@ -11,17 +11,17 @@
         @foreach($roles as $role)
             <tr>
                 <td>{{ $role->name }}</td>
-            <td>{{ implode(", ",$role->permissions->pluck('name')->toArray())  }}</td>
+                <td>{{ implode(", ",$role->permissions->pluck('name')->toArray())  }}</td>
                 <td>
                     {!! Form::open(['route' => ['roles.destroy', $role->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        @can('view_roles')
+                        @can('ver_roles')
                             <a href="{{ route('roles.show', [$role->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>    
                         @endcan
-                        @can('edit_roles')
+                        @can('editar_roles')
                             <a href="{{ route('roles.edit', [$role->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>    
                         @endcan
-                        @can('delete_roles')
+                        @can('eliminar_roles')
                             {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('¿Está segur@?')"]) !!}    
                         @endcan               
                     </div>

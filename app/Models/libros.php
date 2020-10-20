@@ -66,7 +66,7 @@ class Libros extends Model
         'isbn' => 'string',
         'titulo' => 'string',
         'numpaginas' => 'integer',
-        'apublicacion' => 'date',
+        'apublicacion' => 'year',
         'idiomas_ididiomas' => 'integer',
         'editoriales_ideditoriales' => 'integer'
     ];
@@ -88,17 +88,17 @@ class Libros extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function editorialeseditoriales()
+    public function editorial()
     {
-        return $this->belongsTo(\App\Models\Editoriales::class, 'editoriales_ideditoriales');
+        return $this->belongsTo(\App\Models\Editoriales::class);
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function idiomasidiomas()
+    public function idioma()
     {
-        return $this->belongsTo(\App\Models\Idioma::class, 'idiomas_ididiomas');
+        return $this->belongsTo(\App\Models\Idiomas::class);
     }
 
     /**
@@ -122,6 +122,6 @@ class Libros extends Model
      **/
     public function ejemplares()
     {
-        return $this->hasMany(\App\Models\Ejemplares::class, 'libros_idlibros');
+        return $this->hasMany(\App\Models\ejemplares::class);
     }
 }

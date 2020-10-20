@@ -24,12 +24,8 @@ class Autores_has_libros extends Model
     const UPDATED_AT = 'updated_at';
 
 
-
-
     public $fillable = [
-        'libros_idlibros',
-        'libros_idiomas_ididiomas',
-        'libros_editoriales_ideditoriales'
+        'libros_idlibros'
     ];
 
     /**
@@ -39,9 +35,7 @@ class Autores_has_libros extends Model
      */
     protected $casts = [
         'autores_idautores' => 'integer',
-        'libros_idlibros' => 'integer',
-        'libros_idiomas_ididiomas' => 'integer',
-        'libros_editoriales_ideditoriales' => 'integer'
+        'libros_idlibros' => 'integer'
     ];
 
     /**
@@ -51,8 +45,6 @@ class Autores_has_libros extends Model
      */
     public static $rules = [
         'libros_idlibros' => 'required|integer',
-        'libros_idiomas_ididiomas' => 'required|integer',
-        'libros_editoriales_ideditoriales' => 'required|integer'
     ];
 
     /**
@@ -60,7 +52,7 @@ class Autores_has_libros extends Model
      **/
     public function autoresautores()
     {
-        return $this->belongsTo(\App\Models\Autore::class, 'autores_idautores');
+        return $this->belongsTo(\App\Models\Autores::class, 'autores_idautores');
     }
 
     /**
@@ -68,6 +60,6 @@ class Autores_has_libros extends Model
      **/
     public function libroslibros()
     {
-        return $this->belongsTo(\App\Models\Libro::class, 'libros_idlibros');
+        return $this->belongsTo(\App\Models\libros::class, 'libros_idlibros');
     }
 }
