@@ -29,6 +29,23 @@ class PermissionsSedder extends Seeder
         array_push($permissions_array, Permission::create(['name' => 'eliminar_usuarios']));
         array_push($permissions_array, Permission::create(['name' => 'ver_usuarios']));
         array_push($permissions_array, Permission::create(['name' => 'catalogo_libros']));
+        array_push($permissions_array, Permission::create(['name' => 'tabla_libros']));
+        array_push($permissions_array, Permission::create(['name' => 'crear_autores']));
+        array_push($permissions_array, Permission::create(['name' => 'editar_autores']));
+        array_push($permissions_array, Permission::create(['name' => 'eliminar_autores']));
+        array_push($permissions_array, Permission::create(['name' => 'ver_autores']));
+        array_push($permissions_array, Permission::create(['name' => 'crear_editoriales']));
+        array_push($permissions_array, Permission::create(['name' => 'editar_editoriales']));
+        array_push($permissions_array, Permission::create(['name' => 'eliminar_editoriales']));
+        array_push($permissions_array, Permission::create(['name' => 'ver_editoriales']));
+        array_push($permissions_array, Permission::create(['name' => 'crear_idiomas']));
+        array_push($permissions_array, Permission::create(['name' => 'editar_idiomas']));
+        array_push($permissions_array, Permission::create(['name' => 'eliminar_idiomas']));
+        array_push($permissions_array, Permission::create(['name' => 'ver_idiomas']));
+        array_push($permissions_array, Permission::create(['name' => 'crear_categorias']));
+        array_push($permissions_array, Permission::create(['name' => 'editar_categorias']));
+        array_push($permissions_array, Permission::create(['name' => 'eliminar_categorias']));
+        array_push($permissions_array, Permission::create(['name' => 'ver_categorias']));
 
         $AdminRole = Role::create(['name' => 'administrador']);
         $AdminRole->syncPermissions($permissions_array);

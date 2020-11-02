@@ -6,13 +6,13 @@
 
 <!-- Apellidopaterno Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('apellidopaterno', 'Apellidopaterno:') !!}
+    {!! Form::label('apellidopaterno', 'Apellido Paterno:') !!}
     {!! Form::text('apellidopaterno', null, ['class' => 'form-control','maxlength' => 45,'maxlength' => 45]) !!}
 </div>
 
 <!-- Apellidomaterno Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('apellidomaterno', 'Apellidomaterno:') !!}
+    {!! Form::label('apellidomaterno', 'Apellido Materno:') !!}
     {!! Form::text('apellidomaterno', null, ['class' => 'form-control','maxlength' => 45,'maxlength' => 45]) !!}
 </div>
 

@@ -35,7 +35,7 @@
 
             <!-- Logo -->
             <a href="#" class="logo">
-                <b>SGMB</b>
+                <b>SGBM</b>
             </a>
 
             <!-- Header Navbar -->

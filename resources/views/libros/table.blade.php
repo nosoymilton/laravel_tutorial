@@ -38,11 +38,12 @@
                     <div class='btn-group'>
                         <a href="{{ route('libros.show', [$libros->idlibros]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
                         <a href="{{ route('libros.edit', [$libros->idlibros]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
-                        {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('¿Estás segur@?')"]) !!}
                     </div>
                     {!! Form::close() !!}
                 </td>
             </tr>
+            @csrf
         @endforeach
         </tbody>
     </table>

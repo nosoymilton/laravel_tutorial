@@ -9,6 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
+use App\Models\libros;
 
 class LibrosController extends AppBaseController
 {
@@ -29,10 +30,23 @@ class LibrosController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $libros = $this->librosRepository->all();
+        $titulo = $request->get('titulo');
+                
+        $libros = libros::orderBy('idlibros', 'DESC')
+            ->titulo($titulo)
+            ->paginate(8);
 
-        return view('libros.index')
-            ->with('libros', $libros);
+        return view('libros.index', compact('libros'));
+
+        // $libros = libros::query()
+        //     ->when(request('search'), function ($query, $search){
+        //         $query->where('titulo', "%{$search}%");
+        //     })
+        //     ->paginate(8);
+
+        //     //dd($libros);
+ 
+        // return view('libros.index', compact('libros'));
     }
 
     /**
@@ -57,7 +71,7 @@ class LibrosController extends AppBaseController
         $input = $request->all();
         $libros = $this->librosRepository->create($input);
 
-        Flash::success('Libros saved successfully.');
+        Flash::success('Libro guardado correctamente.');
         return redirect(route('libros.index'));
     }
 

@@ -124,4 +124,11 @@ class Libros extends Model
     {
         return $this->hasMany(\App\Models\ejemplares::class);
     }
+
+    //Query Scopes
+    public function scopeTitulo($query, $titulo)
+    {
+        if($titulo)
+            return $query->where('titulo', 'LIKE', "%$titulo%");
+    }
 }

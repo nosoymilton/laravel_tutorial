@@ -125,7 +125,7 @@ class RoleController extends AppBaseController
         $role = $this->roleRepository->update($input, $id);
         $role->permissions()->detach();
         $role->syncPermissions($request->permissions);
-        Flash::success('Role updated successfully.');
+        Flash::success('Roles actualizados correctamente.');
 
         return redirect(route('roles.index'));
     }

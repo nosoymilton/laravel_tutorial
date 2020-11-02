@@ -3,9 +3,9 @@
         <thead>
             <tr>
                 <th>Nombres</th>
-        <th>Apellidopaterno</th>
-        <th>Apellidomaterno</th>
-                <th colspan="3">Action</th>
+                <th>Apellidopaterno</th>
+                <th>Apellidomaterno</th>
+                <th colspan="3">Acciones</th>
             </tr>
         </thead>
         <tbody>

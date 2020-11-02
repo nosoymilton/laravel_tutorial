@@ -49,7 +49,7 @@
     <label for="idiomas_ididiomas">Idioma:</label>
     <select name="idiomas_ididiomas" id="idiomas_ididiomas" class="form-control">
         @foreach (App\Models\Idiomas::all() as $idiomas)
-            <option value="{{ $idiomas->ididiomas }}">{{ $idiomas->idioma }}</option>
+            <option value="{{ $idiomas->ididiomas }}">{{ $idiomas->nombre }}</option>
         @endforeach
     </select>
 </div>
@@ -66,6 +66,6 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{{ route('libros.index') }}" class="btn btn-default">Cancel</a>
+    {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
+    <a href="{{ route('libros.index') }}" class="btn btn-default">Cancelar</a>
 </div>

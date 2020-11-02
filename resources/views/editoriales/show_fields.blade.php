@@ -6,7 +6,7 @@
 
 <!-- Descripcion Field -->
 <div class="form-group">
-    {!! Form::label('descripcion', 'Descripcion:') !!}
+    {!! Form::label('descripcion', 'Descripción:') !!}
     <p>{{ $editoriales->descripcion }}</p>
 </div>
 
