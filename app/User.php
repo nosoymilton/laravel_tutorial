@@ -49,4 +49,9 @@ class User extends Authenticatable
         'name' => 'required',
         'email' => 'required|email'
     ];
+
+    public function reservas()
+    {
+        return $this->hasMany(\App\Models\reservas::class);
+    }
 }

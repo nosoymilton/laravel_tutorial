@@ -60,3 +60,15 @@
 @endcan
 --}}
 
+<li class="{{ Request::is('reservas*') ? 'active' : '' }}">
+    <a href="{{ route('reservas.index') }}"><i class="fa fa-edit"></i><span>Reservas</span></a>
+</li>
+
+<li class="{{ Request::is('prestamos*') ? 'active' : '' }}">
+    <a href="{{ route('prestamos.index') }}"><i class="fa fa-edit"></i><span>Prestamos</span></a>
+</li>
+
+<li class="{{ Request::is('sanciones*') ? 'active' : '' }}">
+    <a href="{{ route('sanciones.index') }}"><i class="fa fa-edit"></i><span>Sanciones</span></a>
+</li>
+

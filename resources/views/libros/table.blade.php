@@ -15,29 +15,42 @@
             </tr>
         </thead>
         <tbody>
-        @foreach($libros as $libros)
+        @foreach($libros as $libro)
             <tr>
-                <td>{{ $libros->isbn }}</td>
-                <td>{{ $libros->titulo }}</td>
-                <td>{{ $libros->numpaginas }}</td>
-                <td>{{ $libros->apublicacion}}</td>
-                <td>{{ App\Models\Idiomas::find($libros->idiomas_ididiomas) }}</td>
-                <td>{{ App\Models\Editoriales::find($libros->editoriales_ideditoriales) }}</td>
-                <td>{{ App\Models\Autores::find($libros->autores) }}</td>
-                <!--<td>{{ App\Models\Ejemplares::find($libros->ejemplares) }}</td>-->
+                <td>{{ $libro->isbn }}</td>
+                <td>{{ $libro->titulo }}</td>
+                <td>{{ $libro->numpaginas }}</td>
+                <td>{{ $libro->apublicacion}}</td>
+                {{-- use App\Models\Idiomas;
+                <td>{{ $libro->idioma->nombre }} </td> --}}
+                <td>{{ $nombre = (App\Models\Idiomas::find($libro->idiomas_ididiomas))->nombre }}</td>
+                <td>{{ $editorial = (App\Models\Editoriales::find($libro->editoriales_ideditoriales))->editorial }}</td>
                 <td>
-                    @foreach($libros->ejemplares as $ejemplar)
-                        {{ $ejemplar->descripcion }}
-                    @endforeach
+                   
+                     @foreach ($libro->autores as $autor)
+                        {{ $autor->nombres }}
+                         
+                     @endforeach
+                     {{-- {{ App\Models\Autores::find($libro->autores->nombres) }} --}}
+                </td>
+                <!--<td>{{ App\Models\Ejemplares::find($libro->ejemplares) }}</td>-->
+                <td>
+                    {{ $libro->ejemplares->count() }}
+                    {{-- @foreach($libro->ejemplares as $ejemplar)
+                        {{ $ejemplar->count() }}
+                    @endforeach --}}
                 </td>
                 <td>
-                    {{ App\Models\Categorias::find($libros->categorias) }}
+                    @foreach ($libro->categorias as $categoria)
+                        {{ $categoria->categoria }}
+                         
+                     @endforeach
                 </td>
                 <td>
-                    {!! Form::open(['route' => ['libros.destroy', $libros->idlibros], 'method' => 'delete']) !!}
+                    {!! Form::open(['route' => ['libros.destroy', $libro->idlibros], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('libros.show', [$libros->idlibros]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
-                        <a href="{{ route('libros.edit', [$libros->idlibros]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
+                        <a href="{{ route('libros.show', [$libro->idlibros]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+                        <a href="{{ route('libros.edit', [$libro->idlibros]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
                         {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('¿Estás segur@?')"]) !!}
                     </div>
                     {!! Form::close() !!}

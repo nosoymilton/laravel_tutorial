@@ -63,3 +63,9 @@ Route::resource('categorias', 'CategoriasController');
 //Route::resource('autoresHasLibros', 'Autores_has_librosController');
 
 //Route::resource('catalogo', 'CatalogoController');
+
+Route::resource('reservas', 'reservasController');
+
+Route::resource('prestamos', 'prestamosController');
+
+Route::resource('sanciones', 'sancionesController');

@@ -50,9 +50,11 @@ class PermissionsSedder extends Seeder
         $AdminRole = Role::create(['name' => 'administrador']);
         $AdminRole->syncPermissions($permissions_array);
 
-        $VolunRole = Role::create(['name' => 'voluntario']);
+        $VolunRole = Role::create(['name' => 'voluntario'])
+            ->givePermissionTo('ver_libros', 'ver_usuarios', 'tabla_libros', 'ver_autores', 'ver_editoriales', 'ver_idiomas', 'ver_categorias');
 
-        $SocioRole = Role::create(['name' => 'socio']);
+        $SocioRole = Role::create(['name' => 'socio'])
+            ->givePermissionTo('catalogo_libros', 'ver_libros');
         
         //crear usuario
         $userAdmin = User::create([
@@ -71,10 +73,38 @@ class PermissionsSedder extends Seeder
         $userVolun->assignRole('voluntario');
 
         $userSocio = User::create([
-            'name' => 'socio',
-            'email' => 'socio@gmail.com',
-            'password' => Hash::make('socio'),
+            'name' => 'socio1',
+            'email' => 'socio1@gmail.com',
+            'password' => Hash::make('socio1'),
         ]);
         $userSocio->assignRole('socio');
+        
+        $userSocio = User::create([
+            'name' => 'socio2',
+            'email' => 'socio2@gmail.com',
+            'password' => Hash::make('socio2'),
+        ]);
+        $userSocio->assignRole('socio'); 
+
+        $userSocio = User::create([
+            'name' => 'socio3',
+            'email' => 'socio3@gmail.com',
+            'password' => Hash::make('socio3'),
+        ]);
+        $userSocio->assignRole('socio'); 
+
+        $userSocio = User::create([
+            'name' => 'socio4',
+            'email' => 'socio4@gmail.com',
+            'password' => Hash::make('socio4'),
+        ]);
+        $userSocio->assignRole('socio'); 
+
+        $userSocio = User::create([
+            'name' => 'socio5',
+            'email' => 'socio5@gmail.com',
+            'password' => Hash::make('socio5'),
+        ]);
+        $userSocio->assignRole('socio'); 
     }
 }

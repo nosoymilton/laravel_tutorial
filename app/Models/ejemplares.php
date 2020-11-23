@@ -73,4 +73,9 @@ class Ejemplares extends Model
     {
         return $this->belongsTo(\App\Models\Libros::class);
     }
+
+    // public function reserva()
+    // {
+    //     return $this->belongsTo(\App\Models\reservas::class);
+    // }
 }

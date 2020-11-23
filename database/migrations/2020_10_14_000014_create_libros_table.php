@@ -27,7 +27,9 @@ class CreateLibrosTable extends Migration
             $table->string('titulo', 100);
             $table->integer('numpaginas');
             $table->year('apublicacion');
+
             $table->integer('idiomas_ididiomas')->unsigned();
+            
             $table->integer('editoriales_ideditoriales')->unsigned();
 
             $table->foreign('editoriales_ideditoriales')->references('ideditoriales')->on('editoriales')
@@ -47,6 +49,6 @@ class CreateLibrosTable extends Migration
      */
      public function down()
      {
-       Schema::dropIfExists($this->tableName);
+        Schema::dropIfExists($this->tableName);
      }
 }

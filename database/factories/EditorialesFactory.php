@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Editoriales::class, function (Faker $faker) {
 
     return [
-        'editorial' => $faker->word,
-        'descripcion' => $faker->word
+        'editorial' => $faker->sentence($nbWords = 3, $variableNbWords = true),
+        'descripcion' => $faker->text($maxNbChars = 100)    
     ];
 });
