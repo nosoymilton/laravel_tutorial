@@ -88,17 +88,17 @@ class Libros extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function editorial()
+    public function editorialeseditoriales()
     {
-        return $this->belongsTo(\App\Models\Editoriales::class);
+        return $this->belongsTo(\App\Models\Editoriales::class, 'editoriales_ideditoriales');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function idioma()
+    public function idiomasidiomas()
     {
-        return $this->belongsTo(\App\Models\Idiomas::class);
+        return $this->belongsTo(\App\Models\Idioma::class, 'idiomas_ididiomas');
     }
 
     /**
@@ -122,13 +122,13 @@ class Libros extends Model
      **/
     public function ejemplares()
     {
-        return $this->hasMany(\App\Models\ejemplares::class);
+        return $this->hasMany(\App\Models\Ejemplares::class, 'libros_idlibros');
     }
 
-    //Query Scopes
-    public function scopeTitulo($query, $titulo)
-    {
-        if($titulo)
-            return $query->where('titulo', 'LIKE', "%$titulo%");
-    }
+     //Busqueda con titulo con Query Scopes
+     public function scopeTitulo($query, $titulo)
+     {
+         if($titulo)
+             return $query->where('titulo', 'LIKE', "%$titulo%");
+     }
 }

@@ -23,13 +23,13 @@ class CreatePrestamosTable extends Migration
         Schema::create('prestamos', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->date('fecha_reserva');
-            $table->date('fecha_prestamo');
-            $table->date('fecha_devolucion');
-            $table->integer('status');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
-            $table->timestamp('eliminated_at');
+            $table->date('fecha_reserva')->nullable()->default(null);
+            $table->date('fecha_prestamo')->nullable()->default(null);
+            $table->date('fecha_devolucion')->nullable()->default(null);
+            $table->string('status');
+            $table->timestamp('created_at')->nullable()->default(null);
+            $table->timestamp('updated_at')->nullable()->default(null);
+            $table->timestamp('eliminated_at')->nullable()->default(null);
 
             $table->integer('ejemplares_idejemplares')->unsigned();
 

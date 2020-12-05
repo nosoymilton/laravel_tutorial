@@ -41,7 +41,8 @@ class Ejemplares extends Model
 
     public $fillable = [
         'libros_idlibros',
-        'descripcion'
+        'libros_idiomas_ididiomas',
+        'libros_editoriales_ideditoriales'
     ];
 
     /**
@@ -51,9 +52,9 @@ class Ejemplares extends Model
      */
     protected $casts = [
         'idejemplares' => 'integer',
-        'descripcion' => 'string',
-        'libros_idlibros' => 'integer'
-        
+        'libros_idlibros' => 'integer',
+        'libros_idiomas_ididiomas' => 'integer',
+        'libros_editoriales_ideditoriales' => 'integer'
     ];
 
     /**
@@ -62,16 +63,17 @@ class Ejemplares extends Model
      * @var array
      */
     public static $rules = [
-        'descripción' => 'required',
-        'libros_idlibros' => 'required|integer'
+        'libros_idlibros' => 'required|integer',
+        'libros_idiomas_ididiomas' => 'required|integer',
+        'libros_editoriales_ideditoriales' => 'required|integer'
     ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function libro()
+    public function libroslibros()
     {
-        return $this->belongsTo(\App\Models\Libros::class);
+        return $this->belongsTo(\App\Models\Libro::class, 'libros_idlibros');
     }
 
     // public function reserva()

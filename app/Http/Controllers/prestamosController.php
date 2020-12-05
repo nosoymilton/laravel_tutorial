@@ -29,7 +29,13 @@ class prestamosController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $prestamos = $this->prestamosRepository->all();
+        // $prestamos = $this->prestamosRepository->all();
+
+        // return view('prestamos.index')
+        //     ->with('prestamos', $prestamos);
+
+        $prestamos = App\Models\prestamos::where('status', 'prestado')
+            ->get();
 
         return view('prestamos.index')
             ->with('prestamos', $prestamos);

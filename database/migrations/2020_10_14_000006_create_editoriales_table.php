@@ -23,7 +23,7 @@ class CreateEditorialesTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('ideditoriales');
-            $table->string('editorial', 45);
+            $table->string('editorial', 200);
             $table->string('descripcion', 100);
         });
     }

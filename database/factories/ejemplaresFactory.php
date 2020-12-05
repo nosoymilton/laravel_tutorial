@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Ejemplares::class, function (Faker $faker) {
 
     return [
-        'descripcion' => $faker->word,
-        'libros_idlibros' => $faker->numberBetween($min=1, $max=10)
+        'descripcion' => $faker->sentence($nbWords = 3, $variableNbWords = true),
+        'libros_idlibros' => $faker->randomDigitNotNull
     ];
 });
